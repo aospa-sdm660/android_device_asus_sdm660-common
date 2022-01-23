@@ -394,6 +394,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sensors.cmc=false \
     ro.vendor.qti.sensors.facing=false
 
+# Service Tracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.2-impl \
+    vendor.qti.hardware.servicetracker@1.2-service \
+    vendor.qti.hardware.servicetracker@1.2.vendor
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
