@@ -6,6 +6,13 @@ on early-boot
      chown system system /dev/input/event3  # stk3xXx-light
      chown system system /dev/input/event4  # stk3xXx-proximity
 
+on boot
+    # Reset Leds (on boot)
+    write /sys/class/leds/green/brightness 1
+    write /sys/class/leds/green/brightness 0
+    write /sys/class/leds/red/brightness 1
+    write /sys/class/leds/red/brightness 0
+
 service nvram_btwifi /system/bin/nvram_btwifi
     user root
     group system oem_2901
