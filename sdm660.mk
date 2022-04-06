@@ -281,6 +281,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/sensors/,$(TARGET_COPY_OUT_VENDOR)/etc/sensors)
 
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    android.frameworks.sensorservice@1.0.vendor
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.vendor.qti.sensors.dev_ori=true \
+    ro.vendor.qti.sensors.pmd=true \
+    ro.vendor.qti.sensors.sta_detect=true \
+    ro.vendor.qti.sensors.mot_detect=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.sdk.sensors.gestures=false \
+    ro.vendor.qti.sensors.cmc=false \
+    ro.vendor.qti.sensors.facing=false
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
