@@ -7,6 +7,9 @@ on early-boot
      chown system system /dev/input/event4  # stk3xXx-proximity
 
 on boot
+    # Tap to wake node
+    chown system system /proc/tpd_gesture
+    chmod 0660 /proc/tpd_gesture
     # Reset Leds (on boot)
     write /sys/class/leds/green/brightness 1
     write /sys/class/leds/green/brightness 0
